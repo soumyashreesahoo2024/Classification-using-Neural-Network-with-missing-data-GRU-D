@@ -15,9 +15,9 @@ Handling missing data:-
 Gamma Calculation:
 
 The decay factor gamma is typically calculated using the delta values as follows:
-      First, the delta is multiplied by a learned weight matrix W and then added to a bias b.
-      A ReLU activation function is applied to the result.
-      Finally, the decay factor gamma is obtained by applying the exponential function to the negative of this value, ensuring that the decay factor lies between 0 and 1.
+      1. First, the delta is multiplied by a learned weight matrix W and then added to a bias b.
+      2. A ReLU activation function is applied to the result.
+      3. Finally, the decay factor gamma is obtained by applying the exponential function to the negative of this value, ensuring that the decay factor lies between 0 and 1.
 
 Mathematically:
       gamma=exp(−ReLU(W⋅δ+b))
@@ -27,6 +27,6 @@ The result is a value that decays exponentially with time, meaning that the long
 
 Integration in GRU-D:
 
-The delta is passed through the TemporalDecay layers to compute gamma_h and gamma_x.
-gamma_h: Controls the decay of the hidden state over time, which is important for deciding how much of the previous hidden state should influence the current state.
-gamma_x: Controls the decay of the input features over time, determining how much influence past inputs should have on the current prediction.
+      1.The delta is passed through the TemporalDecay layers to compute gamma_h and gamma_x.
+      2.gamma_h: Controls the decay of the hidden state over time, which is important for deciding how much of the previous hidden state should influence the current state.
+      3.gamma_x: Controls the decay of the input features over time, determining how much influence past inputs should have on the current prediction.
