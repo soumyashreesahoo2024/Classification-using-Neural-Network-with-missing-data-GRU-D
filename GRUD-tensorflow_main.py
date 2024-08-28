@@ -17,7 +17,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # Suppresses INFO and WARNING messages
 
 
 from GRUD_without_temporaldecay import GRUD      # as per actual GRUD temporal decay factors are important  but this is without using temporal decay                   
-from GRUD_with_temporaldecay import GRUD
+#from GRUD_with_temporaldecay import GRUD        # Use this if want to incorporate temporal decay for GRU-D
 
 
 
